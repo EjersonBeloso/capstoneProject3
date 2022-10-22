@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: white;
+  font-size: 12px;
+  background-color: rgb(43, 51, 68);
+}
+
+Content_img {
+  width: 10000px;
+}
+
+form {
+  background: #111;
+  max-width: 400px;
+  margin: 30px auto;
+  border-radius: 0.4em;
+  border: 1px solid #191919;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+form:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  left: 20%;
+  background: linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
+  top: 0;
+}
+
+form:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  border-radius: 50%;
+  left: 34%;
+  top: -7px;
+  box-shadow: 0 0 6px 4px #fff;
+}
+
+.inset {
+  padding: 20px;
+  border-top: 1px solid #19191a;
+}
+
+form h1 {
+  font-size: 18px;
+  text-shadow: 0 1px 0 black;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  position: relative;
+}
+
+form h1:after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  pointer-events: none;
+  transform: rotate(70deg);
+  background: linear-gradient(
+    50deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+label {
+  color: #666;
+  display: block;
+  padding-bottom: 9px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px 5px;
+  background: linear-gradient(#1f2124, #27292c);
+  border: 1px solid #222;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-radius: 0.3em;
+  margin-bottom: 20px;
+  color: antiquewhite;
+}
+
+label[for="remember"] {
+  color: white;
+  display: inline-block;
+  padding-bottom: 0;
+  padding-top: 1px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.p-container {
+  padding: 0 20px 20px 20px;
+}
+
+.p-container:after {
+  clear: both;
+  display: table;
+  content: "";
+}
+
+.p-container span {
+  display: block;
+  float: left;
+  color: #0d93ff;
+  padding-top: 8px;
+}
+
+$white: #fff;
+$login-orange: orange;
+
+input[type="submit"] {
+  width: 100px;
+  height: 42px;
+  background-color: $login-orange;
+  border-radius: 5px;
+  border-color: orange;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 11px 11px 0 0;
+  color: $white;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0 0 6px $login-orange;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+label:hover ~ input[type="text"],
+label:hover ~ input[type="password"] {
+  background: #27292c;
+}
+
+div.hr {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  width: 100%;
+
+  margin: 20px 0;
+  margin-top: 0px;
+
+  color: #555;
+  text-shadow: 0 1px fade(#fff, 40%);
+
+  div {
+    font-size: 1.2em;
+
+    &:first-child,
+    &:last-child {
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      flex: 1;
+
+      position: relative;
+
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        right: 0px;
+
+        height: 1px;
+
+        background-color: #5f5f5f;
+
+        -webkit-box-shadow: 0 1px 0 fade(#fff, 20%);
+        -moz-box-shadow: 0 1px 0 fade(#fff, 20%);
+        box-shadow: 0 1px 0 fade(#fff, 20%);
+      }
+    }
+
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}
+
+//Google button
+$white: #fff;
+$google-blue: orange;
+
+.google-btn {
+  width: 184px;
+  height: 42px;
+  background-color: $google-blue;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: $white;
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: $white;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+  &:hover {
+    box-shadow: 0 0 6px $google-blue;
+  }
+}
+
+.error_msg,
+.success_msg {
+  width: 360px;
+  padding: 15px;
+  font-size: 14px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.success_msg {
+  background-color: #5cdd5c;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
