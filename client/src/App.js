@@ -18,17 +18,13 @@ function App() {
   const user = localStorage.getItem("token");
   return (
     <Routes>
-      {user && <Route path="/user" element={<UserPage />} />}
-      <Route path="/" element={<LandingPage />} />
-      <Route exact path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/reset-password" element={<ResetPage />} />
-      <Route
-        path="/reset/new-password/:id/:token"
-        element={<NewPasswordPage />}
-      />
-      s
-      <Route path="/user" exact element={<Navigate replace to="/login" />} />
+      {user && <Route path="/user" element={<UserPage/>} />}
+      <Route path="/" element={<LandingPage/>} />
+      <Route exact path="/login" element={<LoginPage/>} />
+      <Route path="/register" element={<RegisterPage/>} />
+      <Route path="/reset-password" element={<ResetPage/>} />
+      <Route path="/reset/new-password/:id/:token" element={<NewPasswordPage/>}/>
+      <Route path="/user" exact element={<Navigate replace to="/login"/>} />
     </Routes>
   );
 }
