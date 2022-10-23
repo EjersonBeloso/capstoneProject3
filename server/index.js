@@ -4,7 +4,8 @@ const cookieSession = require("cookie-session");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
-const blogsRoute = require("./routes/blogsRouter");
+const blogRoute = require("./routes/blog");
+const resetPasswordRoute = require("./routes/resetPassword");
 const app = express();
 
 require("dotenv").config();
@@ -29,14 +30,14 @@ app.use(
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
-app.use("/api/blogs", blogsRoute);
+app.use("/api/blogs", blogRoute);
+app.use("/api/reset-password", resetPasswordRoute);
 
 app.listen("3001", () => {
   console.log("Server is running on port 3001 ;)");
 });
 
-const url =
-  "mongodb+srv://beloso:00000@cluster0.balhhxn.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.DATABASE;
 mongoose
   .connect(url, { useNewUrlParser: true })
   .then(() => {

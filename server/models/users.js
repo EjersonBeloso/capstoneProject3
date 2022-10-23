@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  blogs: [{ type: mongoose.Types.ObjectId, ref: "Blog", required: true }],
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -32,6 +33,11 @@ const validate = (data) => {
     userName: Joi.string().required().label("Username"),
     email: Joi.string().email().required().label("Email"),
     password: passwordComplexity().required().label("Password"),
+    confirm_password: Joi.any()
+      .equal(Joi.ref("password"))
+      .required()
+      .label("Password")
+      .options({ messages: { "any.only": "{{#label}} does not match" } }),
   });
   return schema.validate(data);
 };
