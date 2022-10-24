@@ -10,11 +10,9 @@ function LandingPage() {
           <span className="logo-log">LOG</span>
           <span className="logo-end">.</span>
         </div>
-        <div className="btn-container ms-auto">
-          <Link to="/login" className="login-btn text-light">
-            Login
-          </Link>
-        </div>
+        <Link to="/login" className="login-btn text-light">
+          Login
+        </Link>
       </div>
       <section id="particles-js" class="hero">
         <div class="hero-content">
@@ -31,11 +29,10 @@ function LandingPage() {
           <div class="icon-scroll"></div>
         </div>
       </section>
-
       {/* <!-- section 2 --> */}
       <section id="post-1" className="entry-holder">
         <div className="entry-content ">
-          <div className="section-img">
+          <div className="section-img ">
             <img
               src="https://cdni.iconscout.com/illustration/premium/thumb/c-developer-working-on-a-project-4487037-3738444.png"
               alt=""
@@ -43,12 +40,11 @@ function LandingPage() {
           </div>
           <div className="entry-text">
             <h1>Inspire</h1>
-            <p>Developing and Blogging Is A Never Ending Story</p>
+            <p>Be one of the inspiration for our aspiring developers. </p>
           </div>
         </div>
       </section>
       {/* <!-- end of section2 --> */}
-
       <section id="post-2" className="entry-holder">
         <div className="entry-content">
           <div className="section-img sec2-img">
@@ -60,12 +56,12 @@ function LandingPage() {
           <div className="entry-text sec3-text">
             <h1>Share</h1>
             <p>
-              Start sharing your experience with us and to our fellow developers
+              Start sharing your experience with us and to our fellow
+              developers.
             </p>
           </div>
         </div>
       </section>
-
       <section id="post-3" className="entry-holder">
         <div className="entry-content">
           <div className="section-img">
@@ -76,13 +72,10 @@ function LandingPage() {
           </div>
           <div className="entry-text">
             <h1>Explore</h1>
-            <p>
-              Start sharing your experience with us and to our fellow developers
-            </p>
+            <p>Explore the world of developers and learn to be one of them.</p>
           </div>
         </div>
       </section>
-
       <section id="post-4" className="entry-holder">
         <div className="entry-content">
           <div className="section-img"></div>
@@ -94,10 +87,13 @@ function LandingPage() {
               build a community for those aspiring developers to help them and
               to inspire them.
             </p>
+
+            <Link to="/login" class="hero-btn cta text-light">
+              Start your blog
+            </Link>
           </div>
         </div>
       </section>
-
       <div className="">
         {/* <!-- Footer --> */}
         <footer className="text-center text-lg-start text-white">
@@ -105,7 +101,7 @@ function LandingPage() {
             <section className="">
               <div className="row">
                 <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                  <h6 className="text-uppercase mb-4 font-weight-bold">
+                  <h6 className="text-uppercase mb-4 font-weight-bold text-center">
                     Contact
                   </h6>
                   <p>
@@ -124,19 +120,9 @@ function LandingPage() {
               </div>
             </section>
             <hr className="my-3" />
-
-            <section className="p-3 pt-0">
-              <div className="row d-flex align-items-center">
-                <div className="col-md-7 col-lg-8 text-center text-md-start">
-                  <div className="p-3">
-                    © 2022 Copyright:
-                    <a className="text-white" href="https://mdbootstrap.com/">
-                      GRIT
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <div>
+              <p>© 2022 Copyright:GRIT</p>
+            </div>
           </div>
         </footer>
       </div>
