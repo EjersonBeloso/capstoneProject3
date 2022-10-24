@@ -49,7 +49,7 @@ function NewPasswordPage(){
 			{validUrl ? (
                 <div className='container'>
                     <form onSubmit={handleSubmit}>
-                            <h1>CREATE NEW PASSWORD</h1>
+                            <h1 className="text-light">CREATE NEW PASSWORD</h1>
                         <div className="inset">
                             <label htmlFor="password">PASSWORD</label>
                             <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)}

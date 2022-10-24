@@ -29,7 +29,7 @@ function ResetPage(){
     return(
         <div className='container'>
             <form onSubmit={handleSubmit}>
-                    <h1>FORGOT PASSWORD</h1>
+                    <h1 className='text-light'>FORGOT PASSWORD</h1>
                 <div className="inset">
                     <label htmlFor="email">EMAIL ADDRESS</label>
                     <input type="text" name="email" id="email" onChange={(e) => setEmail(e.target.value)} value={email}/>

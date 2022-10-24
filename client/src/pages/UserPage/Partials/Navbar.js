@@ -1,12 +1,37 @@
 
+import Axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
+import '../index.css'
+import BlogTitle from '../Partials/BlogTitle'
 function Navbar() {
   const logout = () => {
         localStorage.removeItem('token');
         window.location.reload();
     }
 
+   const id = localStorage.getItem("userId");
+
+    const sendRequest = async()=>{
+        const res = await Axios
+        .get(`http://localhost:3001/api/blogs/user/${id}`)
+        .catch(error => console.log(error))
+        const data = await res.data;
+        console.log(data)
+        return data
+    }
+
+    const [blogs, setBlogs] = useState();
+
+    useEffect(()=>{
+        sendRequest().then(data => setBlogs(data.user.blogs));
+    }, [])
+
+    console.log(blogs)
+    
+
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar navbar-dark navbar-navy">
       <div className="container-fluid">
         <div>
           <button
@@ -18,6 +43,7 @@ function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+  
         
         </div>
         <div className="dropdown">
@@ -28,8 +54,8 @@ function Navbar() {
               <a className="dropdown-item" onClick={ logout }>Logout 
                 <i className="bi bi-box-arrow-right ms-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  <path fillRule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                  <path fillRule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                 </svg>
                 </i>
               </a>
@@ -50,7 +76,7 @@ function Navbar() {
 
         <div
           className="offcanvas offcanvas-start text-bg-dark"
-          tabindex="-1"
+          tabIndex="-1"
           id="offcanvasDarkNavbar"
           aria-labelledby="offcanvasDarkNavbarLabel"
         >
@@ -66,17 +92,18 @@ function Navbar() {
             ></button>
           </div>
           <div className="offcanvas-body">
+            <Link to='/new-blog' className='btn btn-dark ms-3'>New 
+            <i className="bi bi-plus-lg ms-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg> 
+            </i>
+            </Link>
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Blog 1
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="">
-                  Blog 2
-                </a>
-              </li>
+              {blogs &&
+                blogs.map((blog, index)=>(
+                  <BlogTitle title={blog.title}/>
+                ))}
             </ul>
           </div>
         </div>

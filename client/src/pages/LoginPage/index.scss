@@ -6,13 +6,9 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     Helvetica, Arial, "Lucida Grande", sans-serif;
   color: white;
-  font-size: 12px;
   background-color: rgb(43, 51, 68);
 }
 
-Content_img {
-  width: 10000px;
-}
 
 form {
   background: #111;
@@ -83,6 +79,7 @@ label {
   color: #666;
   display: block;
   padding-bottom: 9px;
+  font-size: 12px;
 }
 
 input[type="text"],
@@ -95,6 +92,7 @@ input[type="password"] {
   border-radius: 0.3em;
   margin-bottom: 20px;
   color: antiquewhite;
+  font-size: 12px;
 }
 
 label[for="remember"] {
@@ -112,6 +110,7 @@ input[type="checkbox"] {
 
 .p-container {
   padding: 0 20px 20px 20px;
+  
 }
 
 .p-container:after {

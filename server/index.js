@@ -37,8 +37,7 @@ app.listen("3001", () => {
   console.log("Server is running on port 3001 ;)");
 });
 
-const url =
-  "mongodb+srv://beloso:00000@cluster0.balhhxn.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.DATABASE;
 mongoose
   .connect(url, { useNewUrlParser: true })
   .then(() => {

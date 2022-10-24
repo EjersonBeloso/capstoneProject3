@@ -38,7 +38,7 @@ router.get("/:id", async (req, res, next) => {
 
 //Create blog
 router.post("/create", async (req, res, next) => {
-  const { title, content, user } = req.body;
+  const { title, description, user } = req.body;
 
   let existingUser;
 
@@ -51,9 +51,10 @@ router.post("/create", async (req, res, next) => {
   }
 
   const blog = new Blogs({
-    title,
-    content,
     user,
+    title,
+    description,
+    
   });
 
   try {
@@ -72,13 +73,13 @@ router.post("/create", async (req, res, next) => {
 
 //Update blog
 router.put("/edit/:id", async (req, res, next) => {
-  const { title, content } = req.body;
+  const { title, description } = req.body;
   const blogId = req.params.id;
   let blog;
   try {
     blog = await Blogs.findByIdAndUpdate(blogId, {
       title,
-      content,
+      description,
     });
   } catch (error) {
     console.log(error);

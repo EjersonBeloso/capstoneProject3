@@ -42,7 +42,7 @@ function RegisterPage() {
 
   return (
     <div className="container">
-      <h1 className="text-center mt-4">Create your account</h1>
+      <h1 className="text-center mt-4 text-light">Create your account</h1>
       <form onSubmit={handleSubmit}>
         <h1> </h1>
         <div className="inset">
