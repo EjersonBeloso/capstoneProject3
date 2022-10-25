@@ -27,7 +27,6 @@ function LoginPage() {
       localStorage.setItem("token", res.data);
       localStorage.setItem("userId", res.userId);
       window.location = "/user";
-      console.log(res);
     } catch (error) {
       if (error.response.status >= 400 && error.response.status <= 500) {
         setError(error.response.data.message);

@@ -11,7 +11,7 @@ function UserPage(userData) {
       `http://localhost:3001/api/blogs/user/${id}`
     ).catch((error) => console.log(error));
     const data = await res.data;
-    console.log(data);
+
     return data;
   };
 
@@ -21,7 +21,7 @@ function UserPage(userData) {
     sendRequest().then((data) => setBlogs(data.user.blogs));
   }, []);
 
-  console.log(blogs);
+
 
     return(
         <div className='bg'>

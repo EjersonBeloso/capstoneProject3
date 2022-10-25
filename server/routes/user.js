@@ -1,7 +1,23 @@
 const { User, validate } = require("../models/users");
 const bcrypt = require("bcrypt");
+const { route } = require("./blog");
 
 const router = require("express").Router();
+
+router.get("/:id", async (req, res, next) => {
+  const id = req.params.id;
+  let user;
+  try {
+    user = await User.findById(id);
+  } catch (error) {
+    console.log(error);
+  }
+  if (!user) {
+    res.status(404).send({ message: "No user found" });
+  }
+  return res.status(200).json({ user });
+});
+
 
 router.get("/", async (req, res, next) => {
   let users;

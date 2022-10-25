@@ -33,6 +33,8 @@ app.use("/api/auth", authRoute);
 app.use("/api/blogs", blogRoute);
 app.use("/api/reset-password", resetPasswordRoute);
 
+app.use('/uploads', express.static('uploads'));
+
 app.listen("3001", () => {
   console.log("Server is running on port 3001 ;)");
 });

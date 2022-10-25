@@ -1,10 +1,14 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .card{
-    width: 18rem;
+    width: 100%;
 }
 
 .bg{
     background-color: antiquewhite;
-    height: 100vh;
+    height:auto;
     width: 100vw;
 }
 
@@ -20,4 +24,58 @@
 .title{
     background-color: antiquewhite;
     color: black;
+}
+
+.search-bar input {
+  margin: auto 5px auto 0;
+  border-radius: 0;
+}
+
+.search-bar input {
+  color: #fff;
+}
+
+.search {
+  padding: 9px;
+  margin: auto 0;
+  background-color: rgb(118, 119, 128);
+  color: #fff;
+}
+
+th {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.table-title {
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.add {
+background-color:  antiquewhite;
+  padding-top: 16px;
+  height: auto;
+  padding-bottom: 16px;
+border-radius: 10px;
+}
+
+.publish-btn {
+  background-color: #ec7411;
+  margin: 18px 0;
+}
+
+.publish-btn:hover {
+  border: 1px solid #ec7411;
+  background-color: gray;
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+
+.view{
+background-color: #ec7411;
 }

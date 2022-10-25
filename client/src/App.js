@@ -25,8 +25,8 @@ function App() {
       {user && <Route path="/user" element={<UserPage/>}/> }
       {user && <Route path='/new-blog' element={<NewBlog/>}/>}
       {user && <Route path='/reading-list' element={<ReadingList/>}/>}
+      {user && <Route path="/blog/:id" element={<ViewBlog/> }/>}
       <Route path="/" element={<LandingPage/>} />
-      <Route exact path="/api/blogs/:id" element={<LandingPage/>} />
       <Route exact path="/login" element={<LoginPage/>} />
       <Route path="/register" element={<RegisterPage/>} />
       <Route path="/reset-password" element={<ResetPage/>} />
@@ -34,6 +34,7 @@ function App() {
       <Route path="/reading-list" exact element={<Navigate replace to="/"/>} />
       <Route path="/user" exact element={<Navigate replace to="/login"/>} />
       <Route path="/new-blog" exact element={<Navigate replace to="/"/>} />
+      <Route path="/blog/:id" exact element={<Navigate replace to="/"/>} />
     
     </Routes>
   );

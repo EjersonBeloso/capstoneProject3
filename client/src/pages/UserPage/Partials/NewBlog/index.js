@@ -43,10 +43,11 @@ function NewBlog(){
             }
     
     return(
-        <div className="bg text-dark">
+        <div className="bg  text-dark container mt-5 add shadow">
+<h4>Create Blog</h4>
             <div className='container py-5'>
-            <input className="form-control" id="InputEmail1" placeholder='Title' name='title' onChange={handleChange} value={data.title}/>
-            <input className="form-control" id="InputEmail1" placeholder='Description' name='description' onChange={handleChange} value={data.description}/>
+            <input className="form-control my-2" id="InputEmail1" placeholder='Title' name='title' onChange={handleChange} value={data.title}/>
+            <input className="form-control my-2" id="InputEmail1" placeholder='Description' name='description' onChange={handleChange} value={data.description}/>
 
              <QuillEditor
                 placeholder={"Start Posting Something"}
@@ -55,7 +56,7 @@ function NewBlog(){
             />
 
             
-            <button onClick={handleSubmit} className='btn btn-orange'>
+            <button onClick={handleSubmit} className='btn publish-btn'>
                 Create
             </button>
             
