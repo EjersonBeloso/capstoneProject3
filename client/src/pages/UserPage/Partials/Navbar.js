@@ -5,9 +5,16 @@ import { BsSearch } from "react-icons/bs";
 import BlogTitle from "../Partials/BlogTitle";
 function Navbar() {
   const logout = () => {
+<<<<<<< HEAD
     localStorage.removeItem("token");
     window.location.reload();
   };
+=======
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        window.location.reload();
+    }
+>>>>>>> 931e198f8fdcb879bee7c8c2c918abc750e13557
 
   const id = localStorage.getItem("userId");
 

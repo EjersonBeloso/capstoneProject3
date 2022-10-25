@@ -4,12 +4,14 @@ const blogSchema = mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
     },
 
     description: {
       type: String,
-      required: true,
+     
+    },
+    content: {
+      
     },
     user: {
       type: mongoose.Types.ObjectId,

@@ -3,18 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^35.2.1",
-    "@ckeditor/ckeditor5-react": "^5.0.2",
     "@react-oauth/google": "^0.2.8",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
+    "client": "file:",
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
+<<<<<<< HEAD
     "react-icons": "^4.6.0",
+=======
+    "react-quill": "^2.0.0",
+>>>>>>> 931e198f8fdcb879bee7c8c2c918abc750e13557
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "sass": "^1.55.0",

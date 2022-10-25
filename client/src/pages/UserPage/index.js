@@ -23,30 +23,26 @@ function UserPage(userData) {
 
   console.log(blogs);
 
-  return (
-    <div className="bg">
-      <Navbar />
-      <div className="container text-dark mt-5">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">TITLE</th>
-              <th scope="col">DESCRIPTION</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          {blogs &&
-            blogs.map((blog, index) => (
-              <BlogTableBody
-                title={blog.title}
-                description={blog.description}
-                user={blog.user.userName}
-              />
-            ))}
-        </table>
-      </div>
-    </div>
-  );
+    return(
+        <div className='bg'>
+            <Navbar/>
+            <div className='container text-dark mt-5'>
+                <table className="table">
+                        <thead>
+                            <tr>
+                            <th scope="col" className='fs-5'>TITLE</th>
+                            <th scope="col" className='fs-5'>DESCRIPTION</th>
+                            <th scope="col"></th>
+                            </tr>
+                        </thead>
+                {blogs &&
+                blogs.map((blog, index)=>(
+                    <BlogTableBody id={blog._id} title={blog.title} description={blog.description} user={blog.user.userName}/>
+                    ))}
+                </table>
+            </div>
+        </div>
+    )
 }
 
 export default UserPage;
