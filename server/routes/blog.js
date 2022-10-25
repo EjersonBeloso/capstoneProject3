@@ -59,7 +59,7 @@ router.get("/:id", async (req, res, next) => {
   const id = req.params.id;
   let blog;
   try {
-    blog = await Blogs.findById(id);
+    blog = await Blogs.findById(id).populate('user')
   } catch (error) {
     return console.log(error);
   }

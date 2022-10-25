@@ -13,11 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
-<<<<<<< HEAD
-    "react-icons": "^4.6.0",
-=======
     "react-quill": "^2.0.0",
->>>>>>> 931e198f8fdcb879bee7c8c2c918abc750e13557
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "sass": "^1.55.0",

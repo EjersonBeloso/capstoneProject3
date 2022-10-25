@@ -1,20 +1,14 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
+
 import BlogTitle from "../Partials/BlogTitle";
 function Navbar() {
   const logout = () => {
-<<<<<<< HEAD
-    localStorage.removeItem("token");
-    window.location.reload();
-  };
-=======
         localStorage.removeItem('token');
         localStorage.removeItem('userId');
         window.location.reload();
     }
->>>>>>> 931e198f8fdcb879bee7c8c2c918abc750e13557
 
   const id = localStorage.getItem("userId");
 
@@ -51,10 +45,7 @@ function Navbar() {
         </div>
 
         <div className="d-flex">
-          <div className="mx-2 mt-2 d-flex">
-            <BsSearch className="fs-5 mt-2 mx-2" />
-            <input type="text" />
-          </div>
+        
           <div className="dropdown mt-2">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -116,9 +107,8 @@ function Navbar() {
           aria-labelledby="offcanvasDarkNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              My Blogs
-            </h5>
+
+           
             <button
               type="button"
               className="btn-close btn-close-white"
@@ -127,7 +117,19 @@ function Navbar() {
             ></button>
           </div>
           <div className="offcanvas-body">
-            <Link to="/new-blog" className="btn btn-dark ms-3">
+
+
+    <div>
+
+      <div>
+        <Link to="/user" className="btn btn-dark ms-3"> 
+            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              My Blogs
+            </h5>
+            </Link></div>
+     
+      <div> 
+          <Link to="/new-blog" className="btn btn-dark ms-3">
               New
               <i className="bi bi-plus-lg ms-2">
                 <svg
@@ -144,11 +146,20 @@ function Navbar() {
                   />
                 </svg>
               </i>
-            </Link>
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+            </Link></div>
+        <div>
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               {blogs &&
                 blogs.map((blog, index) => <BlogTitle title={blog.title} />)}
-            </ul>
+              </ul></div>
+
+    <div>
+        <Link to="/reading-list" className="btn btn-dark ms-3 mt-5">
+          Reading List
+        </Link>
+    </div>
+
+    </div>  
           </div>
         </div>
       </div>

@@ -27,6 +27,10 @@ function UserPage(userData) {
         <div className='bg'>
             <Navbar/>
             <div className='container text-dark mt-5'>
+          <div className="mx-2 mt-2 d-flex">
+            <h5>Search</h5>
+            <input type="text" className="w-25"/>
+          </div>
                 <table className="table">
                         <thead>
                             <tr>
