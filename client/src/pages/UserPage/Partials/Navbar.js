@@ -7,6 +7,7 @@ import BlogTitle from '../Partials/BlogTitle'
 function Navbar() {
   const logout = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('userId');
         window.location.reload();
     }
 

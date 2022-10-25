@@ -16,6 +16,7 @@ function LoginPage() {
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +25,9 @@ function LoginPage() {
       const url = "http://localhost:3001/api/auth";
       const { data: res } = await Axios.post(url, data);
       localStorage.setItem("token", res.data);
+      localStorage.setItem("userId", res.userId);
       window.location = "/user";
-      console.log(res.message);
+      console.log(res);
     } catch (error) {
       if (error.response.status >= 400 && error.response.status <= 500) {
         setError(error.response.data.message);
@@ -48,7 +50,7 @@ function LoginPage() {
           <div className="right-section">
             <div className="">
               <label htmlFor="email">EMAIL ADDRESS</label>
-              <input
+              <input className="input-text"
                 type="text"
                 name="email"
                 id="email"
@@ -56,7 +58,7 @@ function LoginPage() {
                 value={data.email}
               />
               <label htmlFor="password">PASSWORD</label>
-              <input
+              <input className="input-password"
                 type="password"
                 name="password"
                 id="password"

@@ -40,7 +40,7 @@ function LandingPage() {
           </div>
           <div className="entry-text">
             <h1>Inspire</h1>
-            <p>Be one of the inspiration for our aspiring developers. </p>
+            <p className="p">Be one of the inspiration for our aspiring developers. </p>
           </div>
         </div>
       </section>
@@ -55,7 +55,7 @@ function LandingPage() {
           </div>
           <div className="entry-text sec3-text">
             <h1>Share</h1>
-            <p>
+            <p className="p">
               Start sharing your experience with us and to our fellow
               developers.
             </p>
@@ -72,7 +72,7 @@ function LandingPage() {
           </div>
           <div className="entry-text">
             <h1>Explore</h1>
-            <p>Explore the world of developers and learn to be one of them.</p>
+            <p className="p">Explore the world of developers and learn to be one of them.</p>
           </div>
         </div>
       </section>
@@ -81,7 +81,7 @@ function LandingPage() {
           <div className="section-img"></div>
           <div className="entry-text">
             <h1>Our Goal</h1>
-            <p>
+            <p className="p">
               Devlog is a blogging website for developers to share thier journey
               and discoveries on how they solve problems. Our goal is also to
               build a community for those aspiring developers to help them and
@@ -104,16 +104,16 @@ function LandingPage() {
                   <h6 className="text-uppercase mb-4 font-weight-bold text-center">
                     Contact
                   </h6>
-                  <p>
+                  <p className="p">
                     <i className="fas fa-home mr-3"></i> New York, NY 10012, US
                   </p>
-                  <p>
+                  <p className="p">
                     <i className="fas fa-envelope mr-3"></i> info@gmail.com
                   </p>
-                  <p>
+                  <p className="p">
                     <i className="fas fa-phone mr-3"></i> + 01 234 567 88
                   </p>
-                  <p>
+                  <p className="p">
                     <i className="fas fa-print mr-3"></i> + 01 234 567 89
                   </p>
                 </div>
@@ -121,7 +121,7 @@ function LandingPage() {
             </section>
             <hr className="my-3" />
             <div>
-              <p>© 2022 Copyright:GRIT</p>
+              <p className="p">© 2022 Copyright:GRIT</p>
             </div>
           </div>
         </footer>

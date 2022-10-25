@@ -3,6 +3,39 @@ const mongoose = require("mongoose");
 const router = express.Router();
 const Blogs = require("../models/blogs");
 const { User } = require("../models/users");
+const multer = require('multer')
+
+//Multer
+let storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+      cb(null, `${Date.now()}_${file.originalname}`);
+  },
+  fileFilter: (req, file, cb) => {
+      const ext = path.extname(file.originalname)
+      if (ext !== '.jpg' && ext !== '.png' && ext !== '.mp4') {
+          return cb(res.status(400).end('only jpg, png, mp4 is allowed'), false);
+      }
+      cb(null, true)
+  }
+});
+
+const upload = multer({ storage: storage }).single("file");
+
+
+//Upload files
+router.post('/uploadfiles', async(req, res) => {
+  upload(req, res, err => {
+      if (err) {
+          return res.json({ success: false, err });
+      }
+      
+      return res.json({ success: true, url: res.req.file.path, fileName: res.req.file.filename });
+  });
+  
+});
 
 //View blogs
 router.get("/", async (req, res, next) => {
@@ -38,7 +71,7 @@ router.get("/:id", async (req, res, next) => {
 
 //Create blog
 router.post("/create", async (req, res, next) => {
-  const { title, description, user } = req.body;
+  const { title, description, content, user } = req.body;
 
   let existingUser;
 
@@ -54,6 +87,7 @@ router.post("/create", async (req, res, next) => {
     user,
     title,
     description,
+    content,
     
   });
 
@@ -73,13 +107,14 @@ router.post("/create", async (req, res, next) => {
 
 //Update blog
 router.put("/edit/:id", async (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, content } = req.body;
   const blogId = req.params.id;
   let blog;
   try {
     blog = await Blogs.findByIdAndUpdate(blogId, {
       title,
       description,
+      content,
     });
   } catch (error) {
     console.log(error);
