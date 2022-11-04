@@ -8,8 +8,14 @@ body {
 
 .bg{
     background-color: antiquewhite;
-    height:auto;
-    width: 100vw;
+    height:100%;
+    width: 100%;
+}
+
+.bg-user{
+  background-color: antiquewhite;
+  height:100vh;
+  width: 100vw;
 }
 
 .table-navy{
@@ -67,6 +73,7 @@ border-radius: 10px;
 .publish-btn {
   background-color: #ec7411;
   margin: 18px 0;
+color: #fff;
 }
 
 .publish-btn:hover {
@@ -76,6 +83,34 @@ border-radius: 10px;
   transition: 0.3s ease-in;
 }
 
-.view{
-background-color: #ec7411;
+.view-container{
+max-height: max-content;
+background-color: antiquewhite;
 }
+
+.view{
+background-color:#fff;
+width: 60%;
+height: 100;
+margin: 25px auto;
+border-radius: 5px;
+padding: 50px 0;
+
+}
+
+.add-container{
+width: 100vw;
+height: 100000px;
+background-color: antiquewhite;
+background-size: cover;
+padding-top: 100px
+}
+
+.scroll{
+  max-height: 300px;
+  overflow-y: auto;
+}
+.card{
+  height: 300px;
+}
+

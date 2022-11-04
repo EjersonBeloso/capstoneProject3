@@ -20,15 +20,17 @@ function ViewBlog(){
         return data;
       };
 
-      const userRequest = async () => {
-        const res = await Axios.get(
-          `http://localhost:3001/api/users/${blog.user}`
-        )
-        .catch((error) => console.log(error));
-        const data = await res.data;
+      
+
+
+  const userRequest = async () => {
+    const res = await Axios.get(
+      `http://localhost:3001/api/blogs/user/${blog.user}`
+    ).catch((error) => console.log(error));
+    const data = await res.data;
         console.log(data)
-        return data
-      };
+    return data;
+  };
     
       const [blog, setBlog] = useState({});
       const [user, setUser] = useState({})
@@ -42,16 +44,15 @@ function ViewBlog(){
     
  
     return(
-        <div className=" text-dark">
+        <div className="view-container text-dark bg pb-5">
             <Navbar/>
-            <div className=" view text-center mt-5">
-                <p>Creator: {user.userName}</p>
-                <h1>{blog.title}</h1>
+            <div className=" view text-justify mt-5 p-3">
+                <h1 className="mb-4">{blog.title}</h1>
                 <p>{blog.description}</p>
                 <div dangerouslySetInnerHTML={{__html: blog.content}}/>
                 <p>{blog.createdAt}</p>
                 <p>{blog.updatedAt}</p>
-                <p>{blog.updatedAt}</p>
+              
             </div>
             
         </div>

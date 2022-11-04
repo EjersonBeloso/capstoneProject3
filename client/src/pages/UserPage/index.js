@@ -22,16 +22,33 @@ function UserPage(userData) {
   }, []);
 
 
+  const myFunction = ()=> {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+
+
 
     return(
-        <div className='bg'>
+        <div className='bg-user'>
             <Navbar/>
             <div className='container text-dark mt-5'>
-          <div className="mx-2 mt-2 d-flex">
-            <h5>Search</h5>
-            <input type="text" className="w-25"/>
-          </div>
-                <table className="table">
+  
+                <table className="table" id="myTable">
                         <thead>
                             <tr>
                             <th scope="col" className='fs-5'>TITLE</th>

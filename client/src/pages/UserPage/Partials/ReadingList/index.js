@@ -25,9 +25,6 @@ function ReadingList() {
     return(
         <div className="bg">
             <Navbar/>
- <div className="mx-2 mt-2 d-flex justify-content-end search-bar">
-        <input type="text" className="w-25" placeholder="Search..." />
-      </div>
             <div className='  text-dark mt-1 row row-cols-2 row-cols-md-3 g-4 p-5 '>
             {blogs &&
                 blogs.map((blog, index)=>(

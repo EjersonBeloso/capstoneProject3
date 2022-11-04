@@ -17,7 +17,7 @@ function Navbar() {
       `http://localhost:3001/api/blogs/user/${id}`
     ).catch((error) => console.log(error));
     const data = await res.data;
-    console.log(data);
+
     return data;
   };
 

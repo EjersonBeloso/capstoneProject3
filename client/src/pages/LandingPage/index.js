@@ -56,8 +56,8 @@ function LandingPage() {
           <div className="entry-text sec3-text">
             <h1>Share</h1>
             <p className="p">
-              Start sharing your experience with us and to our fellow
-              developers.
+              Share your experience with your fellow developers around the world.
+          
             </p>
           </div>
         </div>
@@ -105,23 +105,21 @@ function LandingPage() {
                     Contact
                   </h6>
                   <p className="p">
-                    <i className="fas fa-home mr-3"></i> New York, NY 10012, US
+                    <i className="fas fa-home mr-3"></i> Pasay City, 1300, Philippines
                   </p>
                   <p className="p">
-                    <i className="fas fa-envelope mr-3"></i> info@gmail.com
+                    <i className="fas fa-envelope mr-3"></i> devlogsupport@gmail.com
                   </p>
                   <p className="p">
                     <i className="fas fa-phone mr-3"></i> + 01 234 567 88
                   </p>
-                  <p className="p">
-                    <i className="fas fa-print mr-3"></i> + 01 234 567 89
-                  </p>
+               
                 </div>
               </div>
             </section>
             <hr className="my-3" />
             <div>
-              <p className="p">© 2022 Copyright:GRIT</p>
+              <p className="p">© 2022 Copyright</p>
             </div>
           </div>
         </footer>
